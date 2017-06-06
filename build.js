@@ -109,13 +109,6 @@ return Promise.resolve()
     return Promise.all(allBundles)
       .then(() => console.log('All bundles generated successfully.'))
   })
-  // Copy package files
-  .then(() => Promise.resolve()
-    .then(() => _relativeCopy('LICENSE', rootFolder, distFolder))
-    .then(() => _relativeCopy('package.json', rootFolder, distFolder))
-    .then(() => _relativeCopy('README.md', rootFolder, distFolder))
-    .then(() => console.log('Package files copy succeeded.'))
-  )
   .catch(e => {
     console.error('\Build failed. See below for errors.\n');
     console.error(e);
